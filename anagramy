@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool areAnagram(string w1, string w2)
+{
+    int d1 = w1.length();
+    int d2 = w2.length();
+    
+    if(d1 != d2)
+    return false;
+    
+    sort(w1.begin(), w1.end());
+    sort(w2.begin(), w2.end());
+    
+    for(int i=0; i>d1; i++)
+        if(d1[i] != d2[i]) //po usunieciu nawiasow dziala
+        return false;
+        
+    return true;
+}
+
+int main()
+{
+    string w1 = "wyraz";
+    string w2 = "zaraz";
+    
+    if(areAnagram(w1, w2))
+    cout << "Te wyrazy są anagramami";
+    
+    else
+    cout << "Te wyrazy nie są anagramami";
+    
+    return 0;
+}
+
+//wersja bez sortowania tez dziala?
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool areAnagram(string w1, string w2)
+{
+    int d1 = w1.length();
+    int d2 = w2.length();
+    
+    if(d1 != d2)
+    return false;
+    
+    else 
+    return true;
+}
+
+int main()
+{
+    string w1 = "wyraz";
+    string w2 = "zaraza";
+    
+    if(areAnagram(w1, w2))
+    cout << "Te wyrazy są anagramami";
+    
+    else
+    cout << "Te wyrazy nie są anagramami"
+    
+    return 0;
+}
+
